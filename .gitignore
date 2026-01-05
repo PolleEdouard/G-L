@@ -1,0 +1,9 @@
+# Fichiers de sortie
+/results/
+
+# Fichiers objets
+*.o
+
+# Fichiers générés par l'éditeur
+*~
+*.swp
