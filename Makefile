@@ -34,15 +34,19 @@ run: all
 	@echo "Lancement du programme"
 	@$(EXECUTABLES)
 
+# Cible pour nettoyer, recompiler et exécuter le programme
+clean-run: clean run
+
 help:
 	@echo "Utilisation:"
 	@echo "  make <command>"
 	@echo ""
 	@echo "Commandes disponibles:"
-	@echo "  all    : Compile tous les programmes sources."
-	@echo "  clean  : Nettoie les fichiers binaires générés."
-	@echo "  run    : Compile et exécute le programme principal."
-	@echo "  help   : Affiche ce message d'aide."
+	@echo "  all       : Compile tous les programmes sources."
+	@echo "  clean     : Nettoie les fichiers binaires générés."
+	@echo "  run       : Compile et exécute le programme principal."
+	@echo "  clean-run : Nettoie, recompile et exécute le programme."
+	@echo "  help      : Affiche ce message d'aide."
 
 # Indique que 'all' et 'clean' ne sont pas des noms de fichiers.
-.PHONY: all clean help run
+.PHONY: all clean help run clean-run
