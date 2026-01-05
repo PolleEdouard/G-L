@@ -39,7 +39,10 @@ help:
 	@echo "  make <command>"
 	@echo ""
 	@echo "Commandes disponibles:"
-	@grep -E '^[a-zA-Z_-]+:' Makefile | sed 's/:.*//' | sort | xargs -I {} echo "  {}"
+	@echo "  all    : Compile tous les programmes sources."
+	@echo "  clean  : Nettoie les fichiers binaires générés."
+	@echo "  run    : Compile et exécute le programme principal."
+	@echo "  help   : Affiche ce message d'aide."
 
 # Indique que 'all' et 'clean' ne sont pas des noms de fichiers.
 .PHONY: all clean help run
