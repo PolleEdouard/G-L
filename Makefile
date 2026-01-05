@@ -29,5 +29,17 @@ clean:
 	@rm -rf $(BINDIR)
 	@echo "Nettoyage terminé."
 
+# Cible pour exécuter le programme
+run: all
+	@echo "Lancement du programme"
+	@$(EXECUTABLES)
+
+help:
+	@echo "Utilisation:"
+	@echo "  make <command>"
+	@echo ""
+	@echo "Commandes disponibles:"
+	@grep -E '^[a-zA-Z_-]+:' Makefile | sed 's/:.*//' | sort | xargs -I {} echo "  {}"
+
 # Indique que 'all' et 'clean' ne sont pas des noms de fichiers.
-.PHONY: all clean
+.PHONY: all clean help run
