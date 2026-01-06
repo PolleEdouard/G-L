@@ -29,10 +29,11 @@ clean:
 	@rm -rf $(BINDIR)
 	@echo "Nettoyage terminé."
 
-# Cible pour exécuter le programme
+# Cible pour exécuter le programme et ouvrir l'image générée
 run: all
 	@echo "Lancement du programme"
 	@$(EXECUTABLES)
+	@if [ -f $(BINDIR)/afd.png ]; then xdg-open $(BINDIR)/afd.png 2>/dev/null & fi
 
 # Cible pour nettoyer, recompiler et exécuter le programme
 clean-run: clean run
